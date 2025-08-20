@@ -19,8 +19,8 @@ Si570::Si570(uint8_t si570_address, uint32_t calibration_frequency) {
   Wire.begin();
 
   // Disable internal pullups - You will need external 3.3v pullups.
-  digitalWrite(SDA, 0);
-  digitalWrite(SCL, 0);
+  digitalWrite(SDA, 7);
+  digitalWrite(SCL, 6);
 
   f_center = 0;
   frequency = 0;
