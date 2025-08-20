@@ -6,7 +6,8 @@
  * Copyright Thomas Sarlandie - 2014
  * Based on previous work by Ashar Farhan
  */
-
+#define SDA_PIN PB11
+#define SCL_PIN PB10
 #include <Arduino.h>
 #include <Wire.h>
 
@@ -19,8 +20,8 @@ Si570::Si570(uint8_t si570_address, uint32_t calibration_frequency) {
   Wire.begin();
 
   // Disable internal pullups - You will need external 3.3v pullups.
-  digitalWrite(SDA, 0);
-  digitalWrite(SCL, 0);
+  digitalWrite(SDA_PIN, LOW);
+  digitalWrite(SCL_PIN, LOW);
 
   f_center = 0;
   frequency = 0;
